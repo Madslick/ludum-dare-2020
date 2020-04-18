@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour
 
 
 
-        Debug.Log(angle);
+        //Debug.Log(angle);
         //Debug.Log("VelY: " + input.getInputY() + " VelX: " + input.getInputX());
 
         rigidBody.velocity = new Vector2(velX, velY);
