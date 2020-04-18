@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 94a08d0259c779a4d83aca0608666d0f
+=======
+guid: ea603c2b0948277459016f33566d75ca
+>>>>>>> adding more sfx
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
