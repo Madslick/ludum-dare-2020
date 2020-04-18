@@ -1,15 +1,41 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
+
 
 public class InputHandler : MonoBehaviour
 {
     float inputX;
     float inputY;
 
-    void Start()
-    {
+    [Serializable]
+    public class FireEvent : UnityEvent<float> { }
+    public FireEvent onFire;
 
+    [Serializable]
+    public class MovedEvent : UnityEvent { }
+    public MovedEvent onMoved;
+
+    [Serializable]
+    public class StopMovedEvent : UnityEvent { }
+    public StopMovedEvent onStopMoved;
+
+    void Start() {
+        // This stops the audio on startup because it is playing.
+        onStopMoved.Invoke();
+    }
+
+    public void shoot() {
+        onFire.Invoke(1.0f);
+    }
+
+
+    public void stopMoved() {
+        onStopMoved.Invoke();
+    }
+
+    public void moved() {
+        onMoved.Invoke();
     }
 
     public float getInputX() {
@@ -26,5 +52,12 @@ public class InputHandler : MonoBehaviour
         //dashPressed = Input.GetButtonDown("Dash") ? true : false;
         inputX = Input.GetAxis("Horizontal");
         inputY = Input.GetAxis("Vertical");
+
+        if (inputX != 0 || inputY != 0) {
+            moved();
+        } else {
+            stopMoved();
+        }
+
     }
 }
