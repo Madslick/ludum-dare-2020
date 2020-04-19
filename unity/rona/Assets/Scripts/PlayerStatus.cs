@@ -23,7 +23,11 @@ public class PlayerStatus : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
-        healthStatusBarGo.GetComponent<UIStatusBar>().maxValue = maxHealth;
+        if (healthStatusBarGo) {
+            healthStatusBarGo.GetComponent<UIStatusBar>().maxValue = maxHealth;
+        } else {
+            Debug.LogWarning("Please set the health status bar for the play");
+        }
     }
 
     // Update is called once per frame
