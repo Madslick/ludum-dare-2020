@@ -8,19 +8,18 @@ public class EnemyScript : MonoBehaviour
     float moveSpeed = 20;
 
     [SerializeField]
-    float cameraOffsetAngle = 90;
+    int maxHP = 100;
+    
+    [SerializeField]
+    float cameraOffsetAngle;
 
     GameObject player;
-
-    void Awake()
-    {
-        
-    }
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameController.Player;
+        cameraOffsetAngle = GameController.CameraOffsetAngle;
     }
 
     // Update is called once per frame

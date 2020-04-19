@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Mirror;
 
-public class UIStatusBar : MonoBehaviour
+public class UIStatusBar : NetworkBehaviour
 {
 
     public enum StatusBarType {
@@ -16,6 +17,7 @@ public class UIStatusBar : MonoBehaviour
 
     public RectTransform bar;
 
+    [SyncVar]
     public float maxValue;
     private float value;
 
@@ -35,8 +37,9 @@ public class UIStatusBar : MonoBehaviour
     }
 
 
-    public void setValue(float value) {
-        SetPercent(value / maxValue);
+    [Command]
+    public void CmdSetValue(float value) {
+        CmdSetPercent(value / maxValue);
     }
 
 
@@ -44,7 +47,8 @@ public class UIStatusBar : MonoBehaviour
     /// Pass a value between 0 and 1 to set the height of the indicator bar.
     /// </summary>
     /// <param name="percent"></param>
-    public void SetPercent(float percent) {
+    [Command]
+    public void CmdSetPercent(float percent) {
         switch(layoutType) {
             case StatusBarType.Horizontal:
                 bar.localScale = new Vector3(percent, 1f, 1f);
