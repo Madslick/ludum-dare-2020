@@ -8,6 +8,9 @@ public class PlayerStatus : MonoBehaviour
 {
 
     public float maxHealth;
+    private float currentHealth;
+
+    public float addedHealthOnWord;
 
     public GameObject healthStatusBarGo;
 
@@ -16,10 +19,33 @@ public class PlayerStatus : MonoBehaviour
     public HealthChangedEvent healthChanged;
 
 
+    public float maxMana;
+    private float currentMana;
+    public float addedManaOnWord;
+    public GameObject manaStatusBarGo;
+    [Serializable]
+    public class ManaChangedEvent : UnityEvent<float> { }
+    public ManaChangedEvent manaChanged;
+
+    public void HealthTyped() {
+        currentHealth += addedHealthOnWord;
+        currentHealth = currentHealth > maxHealth ? maxHealth : currentHealth;
+    }
+
     public void SetHealth(float value) {
         healthChanged.Invoke(value);
     }
-    
+
+    public void ManaTyped() {
+        currentMana += addedManaOnWord;
+
+        currentMana = currentMana > maxMana ? maxMana : currentMana;
+
+    }
+
+    public void SetMana(float value) {
+        manaChanged.Invoke(value);
+    }
 
     // Start is called before the first frame update
     void Start() {
@@ -28,10 +54,17 @@ public class PlayerStatus : MonoBehaviour
         } else {
             Debug.LogWarning("Please set the health status bar for the play");
         }
+
+        if (manaStatusBarGo) {
+            manaStatusBarGo.GetComponent<UIStatusBar>().maxValue = maxMana;
+        } else {
+            Debug.LogWarning("Please set the mana status bar for the play");
+        }
     }
 
     // Update is called once per frame
     void Update() {
-        SetHealth(Time.time % maxHealth);
+        SetHealth(currentHealth % (maxHealth + 1));
+        SetMana(currentMana % (maxMana + 1));
     }
 }
