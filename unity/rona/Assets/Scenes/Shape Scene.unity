@@ -165,6 +165,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.0000005, y: 4}
   m_EdgeRadius: 0
+--- !u!1 &320633016 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5619670551962236794, guid: c831b2c0eae6e7b41b6c273ffbe9ec75,
+    type: 3}
+  m_PrefabInstance: {fileID: 3858940335771446018}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &320633017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320633016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f522c4239bfd6e4da7b3224b1564fed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1000
 --- !u!1001 &1037335956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -863,10 +882,20 @@ PrefabInstance:
       propertyPath: ShapeModule.enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4748426381881598083, guid: c831b2c0eae6e7b41b6c273ffbe9ec75,
+        type: 3}
+      propertyPath: ShapeModule.m_Rotation.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4925961374763995493, guid: c831b2c0eae6e7b41b6c273ffbe9ec75,
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5357664897468153732, guid: c831b2c0eae6e7b41b6c273ffbe9ec75,
+        type: 3}
+      propertyPath: m_RenderAlignment
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5619670551962236794, guid: c831b2c0eae6e7b41b6c273ffbe9ec75,
         type: 3}
@@ -882,6 +911,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757609424151764689, guid: c831b2c0eae6e7b41b6c273ffbe9ec75,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c831b2c0eae6e7b41b6c273ffbe9ec75, type: 3}
