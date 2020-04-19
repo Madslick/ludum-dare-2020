@@ -17,4 +17,8 @@ public class GameOptions : MonoBehaviour
         SceneManager.LoadScene("SplashScene", LoadSceneMode.Single);
     }
 
+    public void LoadSceneNameSingle (string name) {
+        SceneManager.LoadScene(name, LoadSceneMode.Single);
+    }
+
 }
