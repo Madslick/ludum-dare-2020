@@ -16,8 +16,13 @@ public class GameController : MonoBehaviour
     public static GameObject Player;
     public static float CameraOffsetAngle;
 
+    public static double X, Y, W, H;
+
     [SerializeField]
     GameObject _player;
+
+    [SerializeField]
+    double x, y, w, h;
 
     [SerializeField]
     float _cameraOffsetAngle = 90;
@@ -30,6 +35,11 @@ public class GameController : MonoBehaviour
         }
 
         GameController.CameraOffsetAngle = _cameraOffsetAngle;
+
+        GameController.X = x;
+        GameController.Y = y;
+        GameController.W = w;
+        GameController.H = h;
     }
     // Start is called before the first frame update
     void Start()

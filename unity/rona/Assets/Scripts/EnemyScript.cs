@@ -7,6 +7,10 @@ public class EnemyScript : MonoBehaviour
     [SerializeField]
     float moveSpeed = 20;
 
+    [SerializeField]
+    int maxHP = 100;
+    
+    [SerializeField]
     float cameraOffsetAngle;
 
     GameObject player;
