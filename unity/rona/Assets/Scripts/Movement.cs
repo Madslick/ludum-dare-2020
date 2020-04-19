@@ -28,7 +28,6 @@ public class Movement : MonoBehaviour
         var velX = Mathf.Cos(angle) * velocity;
         var velY = Mathf.Sin(angle) * velocity;
 
-
         //Debug.Log(angle);
         //Debug.Log("VelY: " + input.getInputY() + " VelX: " + input.getInputX());
 

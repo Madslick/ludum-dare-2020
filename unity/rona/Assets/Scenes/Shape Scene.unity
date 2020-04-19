@@ -172,6 +172,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1470028098633288333, guid: 76492407321b07f40b542acfc6771203,
+        type: 3}
+      propertyPath: ShapeModule.m_Position.y
+      value: -1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4669336465857706854, guid: 76492407321b07f40b542acfc6771203,
         type: 3}
       propertyPath: m_DynamicOccludee
@@ -202,6 +207,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5970979523390812479, guid: 76492407321b07f40b542acfc6771203,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6017749490938284126, guid: 76492407321b07f40b542acfc6771203,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -307,7 +317,64 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8200914860158619660, guid: 76492407321b07f40b542acfc6771203,
+        type: 3}
+      propertyPath: ShapeModule.alignToDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200914860158619660, guid: 76492407321b07f40b542acfc6771203,
+        type: 3}
+      propertyPath: ShapeModule.m_Rotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200914860158619660, guid: 76492407321b07f40b542acfc6771203,
+        type: 3}
+      propertyPath: ShapeModule.m_Texture
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200914860158619660, guid: 76492407321b07f40b542acfc6771203,
+        type: 3}
+      propertyPath: ShapeModule.m_Rotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200914860158619660, guid: 76492407321b07f40b542acfc6771203,
+        type: 3}
+      propertyPath: ShapeModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200914860158619660, guid: 76492407321b07f40b542acfc6771203,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200914860158619660, guid: 76492407321b07f40b542acfc6771203,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200914860158619660, guid: 76492407321b07f40b542acfc6771203,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200914860158619660, guid: 76492407321b07f40b542acfc6771203,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200914860158619660, guid: 76492407321b07f40b542acfc6771203,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200914860158619660, guid: 76492407321b07f40b542acfc6771203,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1197342403602180221, guid: 76492407321b07f40b542acfc6771203, type: 3}
+    - {fileID: 1470028098633288333, guid: 76492407321b07f40b542acfc6771203, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 76492407321b07f40b542acfc6771203, type: 3}
 --- !u!1 &1618788220
 GameObject:
@@ -779,6 +846,21 @@ PrefabInstance:
     - target: {fileID: 1400076436158669943, guid: c831b2c0eae6e7b41b6c273ffbe9ec75,
         type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748426381881598083, guid: c831b2c0eae6e7b41b6c273ffbe9ec75,
+        type: 3}
+      propertyPath: ShapeModule.alignToDirection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748426381881598083, guid: c831b2c0eae6e7b41b6c273ffbe9ec75,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748426381881598083, guid: c831b2c0eae6e7b41b6c273ffbe9ec75,
+        type: 3}
+      propertyPath: ShapeModule.enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4925961374763995493, guid: c831b2c0eae6e7b41b6c273ffbe9ec75,
