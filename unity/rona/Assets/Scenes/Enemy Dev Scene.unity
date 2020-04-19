@@ -373,7 +373,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.01
-  cameraOffsetAngle: 90
 --- !u!1 &907903300 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3451884991835466182, guid: c9792363f079eaf44829ded9e5edaeb1,
@@ -399,7 +398,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.001
-  cameraOffsetAngle: 90
 --- !u!1 &1004146634
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,6 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 459111416}
+  _cameraOffsetAngle: -90
 --- !u!1001 &1154559329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -457,7 +456,7 @@ PrefabInstance:
     - target: {fileID: 1849686109132970547, guid: c9792363f079eaf44829ded9e5edaeb1,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3451884991835466176, guid: c9792363f079eaf44829ded9e5edaeb1,
         type: 3}

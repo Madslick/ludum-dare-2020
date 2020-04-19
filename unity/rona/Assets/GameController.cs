@@ -14,10 +14,13 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public static GameObject Player;
+    public static float CameraOffsetAngle;
 
     [SerializeField]
     GameObject _player;
 
+    [SerializeField]
+    float _cameraOffsetAngle = 90;
     //called immediately when script is active
     void Awake()
     {
@@ -25,6 +28,8 @@ public class GameController : MonoBehaviour
         {
             GameController.Player = _player;
         }
+
+        GameController.CameraOffsetAngle = _cameraOffsetAngle;
     }
     // Start is called before the first frame update
     void Start()
