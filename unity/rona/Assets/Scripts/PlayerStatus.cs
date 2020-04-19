@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Mirror;
 
-public class PlayerStatus : MonoBehaviour
+public class PlayerStatus : NetworkBehaviour
 {
 
+    [SyncVar]
     public float maxHealth;
+    [SyncVar]
     private float currentHealth;
 
     public float addedHealthOnWord;
@@ -18,6 +21,12 @@ public class PlayerStatus : MonoBehaviour
     public class HealthChangedEvent : UnityEvent<float> { }
     public HealthChangedEvent healthChanged;
 
+
+    public override void OnStartAuthority() {
+        base.OnStartAuthority();
+
+        Debug.Log("I TOOK AUTHORITY");
+    }
 
     public float maxMana;
     private float currentMana;
@@ -38,10 +47,9 @@ public class PlayerStatus : MonoBehaviour
 
     public void ManaTyped() {
         currentMana += addedManaOnWord;
-
         currentMana = currentMana > maxMana ? maxMana : currentMana;
-
     }
+
 
     public void SetMana(float value) {
         manaChanged.Invoke(value);

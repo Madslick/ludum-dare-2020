@@ -43,8 +43,8 @@ public class WordPicker : MonoBehaviour
         wordMap.Add(14, words.letters14);
         wordMap.Add(15, words.letters15);
 
-        newManaWord();
-        newHealthWord();
+        NewManaWord();
+        NewHealthWord();
     }
 
     void Update()
@@ -70,40 +70,39 @@ public class WordPicker : MonoBehaviour
         }
 
         if (playerText.text == manaObject.text) {
-            newManaWord();
+            NewManaWord();
             
         }
 
         if (playerText.text == healthObject.text) {
-            newHealthWord();
+            NewHealthWord();
             
         }
     }
 
-    void newManaWord() {
-        manaObject.text = newWord(4);
+    public void NewManaWord() {
+        manaObject.text = NewWord(4);
         playerText.text = "";
-        addMana();
-
+        AddMana();
     }
 
-    void newHealthWord() {
-        healthObject.text = newWord(10);
+    public void NewHealthWord() {
+        healthObject.text = NewWord(10);
         playerText.text = "";
-        addHealth();
+        AddHealth();
     }
 
 
-    string newWord(int wordLength) {
+    string NewWord(int wordLength) {
         var index = Random.Range(0, wordMap[wordLength].Length);
         return wordMap[wordLength][index];
     }
 
-    public void addHealth() {
+    public void AddHealth() {
         healthWordTyped.Invoke();
     }
 
-    public void addMana() {
+    public void AddMana() {
         manaWordTyped.Invoke();
     }
 }
