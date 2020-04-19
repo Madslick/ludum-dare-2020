@@ -27,7 +27,7 @@ public class EnemyScript : MonoBehaviour
     void Update()
     {
         //get new position based on move speed
-        Vector2 movePos = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed);
+        Vector2 movePos = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
         //get angle before setting position
         Vector2 moveDir = new Vector2(movePos.x - transform.position.x, movePos.y - transform.position.y);
         //set the position

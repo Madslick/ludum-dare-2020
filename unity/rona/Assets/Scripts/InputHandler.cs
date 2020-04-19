@@ -13,8 +13,13 @@ public class InputHandler : MonoBehaviour
     public EscapePressedEvent onEscapePressed;
 
     [Serializable]
-    public class FireEvent : UnityEvent<float> { }
+    public class FireEvent : UnityEvent<AttackAction> { }
     public FireEvent onFire;
+
+    [Serializable]
+    public class FireStoppedEvent : UnityEvent<AttackAction> { }
+    public FireStoppedEvent onFireStopped;
+
 
     [Serializable]
     public class MovedEvent : UnityEvent { }
@@ -28,11 +33,6 @@ public class InputHandler : MonoBehaviour
         // This stops the audio on startup because it is playing.
         onStopMoved.Invoke();
     }
-
-    public void shoot() {
-        onFire.Invoke(1.0f);
-    }
-
 
     public void stopMoved() {
         onStopMoved.Invoke();
@@ -66,5 +66,29 @@ public class InputHandler : MonoBehaviour
         if (Input.GetKey("escape")) {
             onEscapePressed.Invoke();
         }
+
+        if (Input.GetButton("Fire1")) {
+            Debug.Log(Input.GetAxis("Vertical-Rstick"));
+            var newAction = new AttackAction(Input.GetAxis("Horizontal-Rstick"), Input.GetAxis("Vertical-Rstick"), "Fire1");
+            onFire.Invoke(newAction);
+        } else if(Input.GetButtonUp("Fire1")) {
+            var newAction = new AttackAction(0, 0, "Fire1");
+            onFireStopped.Invoke(newAction);
+        }
     }
+}
+
+public class AttackAction {
+    public AttackAction(float inputX, float inputY, string action){
+        this.inputX = inputX;
+        this.inputY = inputY;
+        this.action = action;
+    }
+    public float inputX;
+    public float inputY;
+    public string action;
+
+    public override string ToString(){
+        return "InputX: " + inputX + " - InputY: " + inputY + " - action: " + action;
+    }  
 }
