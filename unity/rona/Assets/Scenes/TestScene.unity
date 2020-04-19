@@ -355,6 +355,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2993149803646988175}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &803486045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5547267917570748354, guid: 4be6abc452e4233479ecbdfca0fa4474,
+    type: 3}
+  m_PrefabInstance: {fileID: 2993149803646988175}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803486044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b2ebac0c0f6374ca7fe411ab8705c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &865723845
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,18 +451,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7975880f13aff7439e39eefc72c9393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 10
+  healthStatusBarGo: {fileID: 803486044}
   healthChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 803486044}
-        m_MethodName: 
-        m_Mode: 4
+      - m_Target: {fileID: 803486045}
+        m_MethodName: setValue
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 50
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -618,22 +631,22 @@ PrefabInstance:
     - target: {fileID: 1830293036093964984, guid: 4be6abc452e4233479ecbdfca0fa4474,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 421
+      value: 319.8
       objectReference: {fileID: 0}
     - target: {fileID: 1830293036093964984, guid: 4be6abc452e4233479ecbdfca0fa4474,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 263
+      value: 198.2
       objectReference: {fileID: 0}
     - target: {fileID: 1830293036093964984, guid: 4be6abc452e4233479ecbdfca0fa4474,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -914.91235
+      value: -1117.2854
       objectReference: {fileID: 0}
     - target: {fileID: 1830293036093964984, guid: 4be6abc452e4233479ecbdfca0fa4474,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -583.8647
+      value: -454.3459
       objectReference: {fileID: 0}
     - target: {fileID: 1830293036093964984, guid: 4be6abc452e4233479ecbdfca0fa4474,
         type: 3}
@@ -673,7 +686,12 @@ PrefabInstance:
     - target: {fileID: 5547267917570748354, guid: 4be6abc452e4233479ecbdfca0fa4474,
         type: 3}
       propertyPath: maxValue
-      value: 100
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5547267917570748354, guid: 4be6abc452e4233479ecbdfca0fa4474,
+        type: 3}
+      propertyPath: layoutType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8456471812956907434, guid: 4be6abc452e4233479ecbdfca0fa4474,
         type: 3}
