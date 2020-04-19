@@ -9,6 +9,10 @@ public class InputHandler : MonoBehaviour
     float inputY;
 
     [Serializable]
+    public class EscapePressedEvent : UnityEvent { }
+    public EscapePressedEvent onEscapePressed;
+
+    [Serializable]
     public class FireEvent : UnityEvent<float> { }
     public FireEvent onFire;
 
@@ -59,5 +63,8 @@ public class InputHandler : MonoBehaviour
             stopMoved();
         }
 
+        if (Input.GetKey("escape")) {
+            onEscapePressed.Invoke();
+        }
     }
 }
