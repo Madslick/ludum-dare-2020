@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    [SerializeField]
-    float moveSpeed = 20;
+    public float moveSpeed = 20;
+    public float distanceThreshold = 0;
+    public float cameraOffsetAngle;
+    public int maxHP = 100;
 
-    [SerializeField]
-    int maxHP = 100;
-    
-    [SerializeField]
-    float cameraOffsetAngle;
+    [HideInInspector]
+    public GameObject player;
 
-    GameObject player;
+    [HideInInspector]
+    public float distanceToTarget;
+
+    [HideInInspector]
+    public Vector2 moveDir;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    public void Start() {
         player = GameController.Player;
-        cameraOffsetAngle = GameController.CameraOffsetAngle;
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -27,14 +28,19 @@ public class EnemyScript : MonoBehaviour
         //other.attachedRigidbody.AddForce(-0.1F * other.attachedRigidbody.velocity);
     }
     // Update is called once per frame
-    void Update()
-    {
-        //get new position based on move speed
+    public void Update() {
+
+        // Get new position based on move speed
         Vector2 movePos = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
-        //get angle before setting position
-        Vector2 moveDir = new Vector2(movePos.x - transform.position.x, movePos.y - transform.position.y);
-        //set the position
-        transform.position = movePos;
+
+        // Get angle before setting position
+        moveDir = new Vector2(movePos.x - transform.position.x, movePos.y - transform.position.y);
+
+        distanceToTarget = Vector2.Distance(player.transform.position, transform.position);
+        if (distanceToTarget > distanceThreshold) {
+            //set the position
+            transform.position = movePos;
+        }
 
         //set rotation
         if (moveDir != Vector2.zero) {
