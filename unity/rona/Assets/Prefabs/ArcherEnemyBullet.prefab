@@ -147,5 +147,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackType: 0
-  Dps: 5
-  StartingDpsDuration: 2
+  Dps: 15
+  StartingDpsDuration: 1

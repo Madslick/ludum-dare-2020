@@ -47,10 +47,8 @@ public class AttackHandler : MonoBehaviour
         );
         var angles = lazerBeam.transform.rotation.eulerAngles;
         angles.z = Mathf.Rad2Deg * Mathf.Atan2(action.inputY,  action.inputX);
-        Debug.Log(Mathf.Atan2(action.inputY,  action.inputY));
-        // var velX = Mathf.Cos(angle) * velocity;
-        // var velY = Mathf.Sin(angle) * velocity;
-        Debug.Log(action);
+        Debug.Log(action.inputY + " " + action.inputX);
+
         lazerBeam.transform.rotation = Quaternion.Euler(angles);
     }
 

@@ -38,10 +38,13 @@ public class InputHandler : MonoBehaviour
             if (names[x].Length == 19)
             {
                 mode = "PS4-";
+                break;
             } else {
                 mode = "Xbox-";
             }
         }
+
+        Debug.Log(mode);
 
         // This stops the audio on startup because it is playing.
         onStopMoved.Invoke();

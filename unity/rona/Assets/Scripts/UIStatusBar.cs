@@ -37,9 +37,8 @@ public class UIStatusBar : NetworkBehaviour
     }
 
 
-    [Command]
-    public void CmdSetValue(float value) {
-        CmdSetPercent(value / maxValue);
+    public void SetValue(float value) {
+        SetPercent(value / maxValue);
     }
 
 
@@ -47,8 +46,7 @@ public class UIStatusBar : NetworkBehaviour
     /// Pass a value between 0 and 1 to set the height of the indicator bar.
     /// </summary>
     /// <param name="percent"></param>
-    [Command]
-    public void CmdSetPercent(float percent) {
+    public void SetPercent(float percent) {
         switch(layoutType) {
             case StatusBarType.Horizontal:
                 bar.localScale = new Vector3(percent, 1f, 1f);

@@ -123,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 1
   Dps: 45
-  StartingDpsDuration: 2
+  StartingDpsDuration: 0.3
 --- !u!1 &7819471706557067861
 GameObject:
   m_ObjectHideFlags: 0

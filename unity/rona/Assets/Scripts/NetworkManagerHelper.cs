@@ -54,7 +54,7 @@ public class NetworkManagerHelper : NetworkManager {
 
     public void AssignPlayer1Authorities() {
         // Assign NetworkPlayer to player1.
-        FindObjectOfType<PlayerStatus>().GetComponent<NetworkIdentity>().AssignClientAuthority(player1);
+        FindObjectOfType<Status>().GetComponent<NetworkIdentity>().AssignClientAuthority(player1);
         // Player 1 should be able to have authority on the network events.
         var networkEvents = FindObjectOfType<NetworkEvents>();
         if (networkEvents) {

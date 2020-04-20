@@ -40,7 +40,7 @@ public class NetwokManagerHelper : NetworkManager {
 
         Debug.Log("About to assign authority");
         //CmdSetAuthority(FindObjectOfType<PlayerStatus>().gameObject.GetComponent<NetworkIdentity>(), player1);
-        FindObjectOfType<PlayerStatus>().gameObject.GetComponent<NetworkIdentity>().AssignClientAuthority(player1);
+        FindObjectOfType<Status>().gameObject.GetComponent<NetworkIdentity>().AssignClientAuthority(player1);
 
         Debug.Log(player1.clientOwnedObjects);
     }
