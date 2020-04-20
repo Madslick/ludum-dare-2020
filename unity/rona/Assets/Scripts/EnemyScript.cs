@@ -22,6 +22,10 @@ public class EnemyScript : MonoBehaviour
         cameraOffsetAngle = GameController.CameraOffsetAngle;
     }
 
+    void OnTriggerStay2D(Collider2D other)
+    {
+        //other.attachedRigidbody.AddForce(-0.1F * other.attachedRigidbody.velocity);
+    }
     // Update is called once per frame
     void Update()
     {
