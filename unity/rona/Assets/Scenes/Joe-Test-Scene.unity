@@ -101034,6 +101034,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1435367218}
+  x: 0
+  y: 0
+  w: 0
+  h: 0
+  _cameraOffsetAngle: 90
 --- !u!4 &586243307
 Transform:
   m_ObjectHideFlags: 0
@@ -101429,7 +101434,7 @@ PrefabInstance:
     - target: {fileID: 3451884991835466176, guid: c9792363f079eaf44829ded9e5edaeb1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3451884991835466176, guid: c9792363f079eaf44829ded9e5edaeb1,
         type: 3}
@@ -101512,6 +101517,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1584796829}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &1765865335
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765865333}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &1765865337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101525,6 +101551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
+  maxHP: 100
   cameraOffsetAngle: 90
 --- !u!1001 &1802926190
 PrefabInstance:

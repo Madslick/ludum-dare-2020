@@ -35,7 +35,6 @@ public class InputHandler : MonoBehaviour
         string[] names = Input.GetJoystickNames();
         for (int x = 0; x < names.Length; x++)
         {
-            print(names[x].Length);
             if (names[x].Length == 19)
             {
                 mode = "PS4-";
@@ -46,7 +45,6 @@ public class InputHandler : MonoBehaviour
             }
         }
 
-        Debug.Log(mode);
         // This stops the audio on startup because it is playing.
         onStopMoved.Invoke();
     }
@@ -75,7 +73,6 @@ public class InputHandler : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(mode);
         //dashPressed = Input.GetButtonDown("Dash") ? true : false;
         inputX = Input.GetAxis(mode + "Horizontal");
         inputY = Input.GetAxis(mode + "Vertical");
