@@ -38,9 +38,7 @@ public class InputHandler : MonoBehaviour
             if (names[x].Length == 19)
             {
                 mode = "PS4-";
-            }
-            if (names[x].Length == 44)
-            {
+            } else {
                 mode = "Xbox-";
             }
         }

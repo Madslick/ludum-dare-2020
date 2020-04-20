@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5246326462647916156}
   - component: {fileID: 5246326462647916157}
+  - component: {fileID: 3546314882198309268}
   - component: {fileID: 9115948325745386895}
   - component: {fileID: 5246326462647916159}
   m_Layer: 8
@@ -83,6 +84,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &3546314882198309268
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5246326462647916154}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!60 &9115948325745386895
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -130,9 +152,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
-  maxHP: 50
   distanceThreshold: 6
   cameraOffsetAngle: 270
+  maxHP: 50
   player: {fileID: 0}
   distanceToTarget: 5
   moveDir: {x: 0, y: 0}
@@ -140,3 +162,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 919086426097209740, guid: eb09c659e4e53564c980239dda4ac40b,
     type: 3}
   bulletVelocityFactor: 400
+  shootDistanceThreshold: 3
