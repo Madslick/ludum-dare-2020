@@ -99,8 +99,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -154,7 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6
   distanceThreshold: 6
-  cameraOffsetAngle: 270
   player: {fileID: 0}
   distanceToTarget: 5
   moveDir: {x: 0, y: 0}

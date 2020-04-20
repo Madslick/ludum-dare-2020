@@ -176,7 +176,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   distanceThreshold: 0
-  cameraOffsetAngle: 90
   player: {fileID: 0}
   distanceToTarget: 0
   moveDir: {x: 0, y: 0}

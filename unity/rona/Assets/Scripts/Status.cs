@@ -29,7 +29,10 @@ public class Status : MonoBehaviour
     public class ManaChangedEvent : UnityEvent<float> { }
     public ManaChangedEvent manaChanged;
 
+
+    private SpriteRenderer spriteRenderer;
     void Start() {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         if (healthStatusBarGo) {
             healthStatusBarGo.GetComponent<UIStatusBar>().maxValue = maxHealth;
         } else {
@@ -43,7 +46,7 @@ public class Status : MonoBehaviour
         }
         damageSources = new List<DamageSource>();
 
-        currentHealth = maxHealth / 2;
+        currentHealth = maxHealth;
         currentMana = 0; 
     }
 
@@ -66,7 +69,6 @@ public class Status : MonoBehaviour
     void OnTriggerStay2D(Collider2D collision)
     {
 
-        Debug.Log("Layer!!" + collision.gameObject.layer);
         if (collision.gameObject.layer == vulnerabilityLayer)
         {
             Attack attack = collision.GetComponent<Attack>();
@@ -126,6 +128,15 @@ public class Status : MonoBehaviour
                 addList.Add(dmgSource);
             }
         }
+
+        float percentage = currentHealth / maxHealth;
+        float H, S, V;
+        Color.RGBToHSV(spriteRenderer.color, out H, out S, out V);
+
+
+        S = vulnerabilityLayer == 11 ? percentage : (1 - percentage);
+
+        spriteRenderer.color = Color.HSVToRGB(H, S, V);
 
         damageSources = addList.FindAll(ds => true);
         if (currentHealth <= 0) {

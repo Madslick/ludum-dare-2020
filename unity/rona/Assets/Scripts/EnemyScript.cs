@@ -15,6 +15,7 @@ public class EnemyScript : MonoBehaviour
 
     [HideInInspector]
     public Vector2 moveDir;
+    protected float angle;
 
     // Start is called before the first frame update
     void Start()
@@ -41,8 +42,9 @@ public class EnemyScript : MonoBehaviour
         //set rotation
         if (moveDir != Vector2.zero)
         {
-            float angle = Mathf.Atan2(moveDir.y, moveDir.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            angle = Mathf.Atan2(moveDir.y, moveDir.x);
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle  * Mathf.Rad2Deg));
+
         }
 
 

@@ -18,11 +18,9 @@ public class GameController : MonoBehaviour
 
     public static double X, Y, W, H;
 
-    [SerializeField]
-    GameObject _player;
+    public GameObject _player;
 
-    [SerializeField]
-    double x, y, w, h;
+    public double x, y, w, h;
 
     [SerializeField]
     float _cameraOffsetAngle = 90;

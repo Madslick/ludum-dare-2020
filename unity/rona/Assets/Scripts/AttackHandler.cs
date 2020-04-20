@@ -37,7 +37,7 @@ public class AttackHandler : MonoBehaviour
         
         if (!lazerBeam) {
             lazerBeam = Instantiate(lazerBeamPrefab) as GameObject;
-            
+            Debug.Log("LazerBeam");
         }
 
         lazerBeam.transform.position = new Vector3(
@@ -47,7 +47,6 @@ public class AttackHandler : MonoBehaviour
         );
         var angles = lazerBeam.transform.rotation.eulerAngles;
         angles.z = Mathf.Rad2Deg * Mathf.Atan2(action.inputY,  action.inputX);
-        Debug.Log(action.inputY + " " + action.inputX);
 
         lazerBeam.transform.rotation = Quaternion.Euler(angles);
     }
